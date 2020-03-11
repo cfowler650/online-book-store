@@ -1,30 +1,32 @@
-
 .slick-next:before {
-
-  position: absolute;
-  top: 20%;
-  right: 20%;
-  font-size: 3.5rem;
+    position: absolute;
+    top: 126px;
+    right: 40%;
+    font-size: 3.8rem;
 }
 
 .slick-prev:before {
-  color: red;
-  font-size: 3.5rem;
+    color: white;
+    font-size: 3.8rem;
 }
 
 button.slick-arrow.slick-prev {
-  width: 50px;
-  height: 100%;
+    width: 50px;
+    height: 20%;
+    z-index: 1;
+    top: 155px;
+    left: 10px;
+    position: absolute;
 }
 
 .carousel-slide {
-  display: inline-block;
-  position: relative;
-  min-width: 100px;
-  word-wrap: break-word;
-  background-color: #fff;
+    display: inline-block;
+    position: relative;
+    min-width: 100px;
+    word-wrap: break-word;
+    background-color: #fff;
 
-  border-radius: .25rem;
+    border-radius: 0.25rem;
 }
 
 .slide-button {
@@ -37,7 +39,7 @@ button.slick-arrow.slick-prev {
 }
 
 .slide-button:focus {
-  outline: none;
+    outline: none;
 }
 
 .slide-title {
@@ -50,14 +52,20 @@ button.slick-arrow.slick-prev {
 }
 
 .slide-author {
-  margin-bottom: 0.5rem;
-  color: white;
+    margin-bottom: 0.5rem;
+    color: white;
 }
 
 .slide-review {
-  margin-bottom: 1rem;
-  display: inline;
-  color: white;
-  font-size: 10px;
-  margin-left: 8px;
+    margin-bottom: 1rem;
+    display: inline;
+    color: white;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+@media screen and (min-width: 1300px) {
+    .jumbotron-container-main {
+        max-width: 1200px !important;
+    }
 }

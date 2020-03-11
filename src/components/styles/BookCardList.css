@@ -1,12 +1,11 @@
 .book-title {
-   margin-bottom: 2px !important;
-   font-size: 15px !important;
-   color: rgba(0, 0, 0, 0.76);
-
+    margin-bottom: 2px !important;
+    font-size: 15px !important;
+    color: rgba(0, 0, 0, 0.76);
 }
 .card-author {
     font-size: 11px;
-    color: rgba(0,0,0,0.65);
+    color: rgba(0, 0, 0, 0.65);
     font-weight: 460;
     margin-bottom: 0.4rem;
 }
@@ -20,18 +19,16 @@
 }
 
 .book-card-reviews {
-
-  margin-bottom: 1rem;
-  display: inline;
-  color: rgba(0,0,0,0.5);
-  font-size: 11px;
-  margin-left: 8px;
+    margin-bottom: 1rem;
+    display: inline;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 11px;
+    margin-left: 8px;
 }
 
-.book-card-bottom-section{
-      padding: 10px;
+.book-card-bottom-section {
+    padding: 10px;
     border-top: 1.2px solid rgb(226, 226, 226);
     width: 94%;
     margin-left: 10px;
-
 }

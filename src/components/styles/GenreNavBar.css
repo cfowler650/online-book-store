@@ -1,0 +1,7 @@
+a.nav-link:active {
+    font-weight: bolder !important;
+}
+
+a.nav-link:focus {
+    font-weight: bolder !important;
+}
