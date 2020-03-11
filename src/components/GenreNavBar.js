@@ -34,7 +34,7 @@ const GenreNavBar = () => {
     <Container style={{ marginBottom: 40 }}>
       <Row style={{ marginBottom: 20, borderBottom: '1.2px solid #e2e2e2' }}>
         <Col xs={3}>
-          <p>Popular by genre</p>
+          <p>Popular by Genre</p>
         </Col>
         <Col xs={9}>
           <Nav className="justify-content-end">{generateLinks()}</Nav>

@@ -9,9 +9,9 @@ import Image from "react-bootstrap/Image";
 
 const SideBarListItem = ({ item }) => {
   return (
-    <Container className="noPadding">
-      <Image src="https://source.unsplash.com/random/20x20" roundedCircle />
-      <span style={{ paddingLeft: "1rem" }}>{item}</span>
+    <Container className="noPadding" style={{ marginBottom: '0.8rem' }}>
+      <Image style={{ boxShadow: 'rgb(170, 170, 170) 0px 3px 6px 0.5px' }} src="https://source.unsplash.com/random/20x20" roundedCircle />
+      <span style={{ paddingLeft: "1rem", fontSize: "12px" }}>{item}</span>
     </Container>
   )
 }

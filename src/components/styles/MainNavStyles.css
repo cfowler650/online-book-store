@@ -1,0 +1,28 @@
+.main-nav-hamburger {
+  padding: 2px 12px 2px 25px;
+  border-left: 1px solid rgba(0,0,0,0.20);
+}
+
+.main-nav-link {
+  color:  rgba(0,0,0,0.48);
+  font-size: 12px;
+  position: absolute;
+  padding-top: 3px;
+}
+
+
+.dropdown-toggle::after {
+  color: rgba(0,0,0,0.48);
+}
+
+#dropdown-basic-button {
+  background-color: inherit;
+  border: none;
+  color: rgba(0,0,0,0.48);
+  font-weight: 440;
+  padding: 0 14px 0 0px;
+  margin: 0;
+  font-size: 14px;
+  border-right: 1px solid rgba(0,0,0,0.20);
+  border-radius: 0;
+}
