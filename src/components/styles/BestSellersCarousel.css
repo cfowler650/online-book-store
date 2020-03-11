@@ -1,0 +1,28 @@
+
+.slick-next:before {
+
+  position: absolute;
+  top: 20%;
+  right: 20%;
+  font-size: 3.5rem;
+}
+
+.slick-prev:before {
+  color: red;
+  font-size: 3.5rem;
+}
+
+button.slick-arrow.slick-prev {
+  width: 50px;
+  height: 100%;
+}
+
+.carousel-slide {
+  display: inline-block;
+  position: relative;
+  min-width: 100px;
+  word-wrap: break-word;
+  background-color: #fff;
+
+  border-radius: .25rem;
+}

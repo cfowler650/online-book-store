@@ -4,3 +4,10 @@ div.noPadding {
 }
 
 /* main nav bar  */
+
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
