@@ -3,6 +3,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import './styles/BestSellersCarousel.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 //bootstrap components
 import Container from "react-bootstrap/Container";
 import Jumbotron from "react-bootstrap/Jumbotron";
@@ -21,53 +24,80 @@ function Arrow(props) {
 }
 
 let books = [
-  { title: 'Book Title 1', image: './book1.jpg' },
-  { title: 'Book Title 2', image: './book1.jpg' },
-  { title: 'Book Title 3', image: './book1.jpg' },
-  { title: 'Book Title 4', image: './book1.jpg' },
-  { title: 'Book Title 5', image: './book1.jpg' },
-  { title: 'Book Title 6', image: './book1.jpg' },
+  { title: 'Attack of The Planet', image: './book1.jpg', author: 'John Winkleman', rating: 5 },
+  { title: 'Book Title 2', image: './book1.jpg', author: 'John Winkleman', rating: 3 },
+  { title: 'Book Title 3', image: './book1.jpg', author: 'John Winkleman', rating: 2 },
+  { title: 'Book Title 4', image: './book1.jpg', author: 'John Winkleman', rating: 4 },
+  { title: 'Book Title 5', image: './book1.jpg', author: 'John Winkleman', rating: 5 },
+  { title: 'Book Title 6', image: './book1.jpg', author: 'John Winkleman', rating: 3 },
 ]
+
 
 let colors = [
-  "linear-gradient(pink, #f06d06)",
-  "linear-gradient(salmon, pink)",
-  "linear-gradient(pink, orange)",
-  "linear-gradient(salmon, orange)",
-  "linear-gradient(yellow, orange)",
-  "linear-gradient(pink, salmon)",
+  "salmon, pink",
+  "salmon, orange",
+  "salmon, crimson",
+  "salmon, orange",
+  "salmon, pink",
+  "salmon, pink",
 ]
 
-const CarouselSlide = ({ thisIndex, title, image }) => {
+const starGenerator = (rating) => {
+  let stars = [];
 
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
+  let array = rating => {
+    for (var i = 0; i < 5; i += 1) stars.push(i);
+  };
+
+  array(rating);
+
+  return (
+    <>
+      {stars.map((star, index) => {
+        return (
+          index < rating
+            ? <FontAwesomeIcon color="rgb(220,20,60)" icon={faStar} />
+            : <FontAwesomeIcon color="rgb(255,192,203)" icon={faStar} />
+        );
+      })}
+    </>
+  );
+};
+
+const CarouselSlide = ({ thisIndex, title, image, author, rating }) => {
 
   let thisColor = colors[thisIndex]
+
   return (
     <Card style={{ border: 'none', background: 'inherit', width: "424px", }}>
       <Card.Body style={{ display: "flex", minHeight: "400px", padding: 0 }}>
         <div style={{ paddingLeft: '0' }}>
           <div style={{
-            paddingLeft: '30%', background: `${thisColor}`, minHeight: '72%'
+            paddingLeft: '30%', background: `linear-gradient(${thisColor})`, minHeight: '72%'
           }}>
+
             <img style={{
               position: "absolute",
               top: "40px",
               left: "20px",
               width: "190px",
-              height: "290px"
+              height: "290px",
+              boxShadow: 'rgba(0, 0, 0, 0.6) 0px 5px 20px 1px'
             }} src={image} />
             <div style={{
               fontSize: "12px", paddingLeft: 100,
               paddingRight: 20, paddingTop: "40px"
             }}>
-              <Card.Title style={{ fontSize: "16px" }}>{title}</Card.Title>
-              <Card.Text>
+              <Card.Title style={{ fontSize: "16px", marginBottom: 0 }}><p className="slide-title">{title}</p></Card.Title>
+              <p className="slide-author">by {author}</p>
+              <span>
+                {starGenerator(rating)}
+                <p className="slide-review">1,000,000 reviews</p></span>
+              <Card.Text style={{ marginTop: "10px", color: "white" }}>
                 Nisi aute excepteur aliqua laborum. Elit voluptate dolore ut dolore. Enim ut nostrud non in proident consectetur eu voluptate commodo.
              </Card.Text>
 
+              <button className="slide-button" style={{ color: "salmon" }}>See This Book</button>
             </div>
           </div>
         </div>
@@ -85,8 +115,32 @@ const BestSellersCarousel = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-
-    nextArrow: <Arrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
+    nextArrow: <Arrow />
   };
   return (
     <Container fluid>
@@ -96,7 +150,7 @@ const BestSellersCarousel = () => {
           {books.map((book, index) => {
             return (
               <div style={{ paddingRight: "10px" }}>
-                <CarouselSlide thisIndex={index} title={book.title} image={book.image} />
+                <CarouselSlide thisIndex={index} title={book.title} image={book.image} author={book.author} rating={book.rating} />
               </div>
             );
           })}

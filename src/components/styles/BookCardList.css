@@ -1,0 +1,36 @@
+.book-title {
+   margin-bottom: 2px !important;
+   font-size: 15px !important;
+   color: rgba(0, 0, 0, 0.76);
+
+}
+.card-author {
+    font-size: 11px;
+    color: rgba(0,0,0,0.65);
+    font-weight: 460;
+    margin-bottom: 0.4rem;
+}
+
+.book-card-image {
+    position: absolute;
+    top: -20px;
+    left: 12px;
+    height: 180px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 12px 1px;
+}
+
+.book-card-reviews {
+
+  margin-bottom: 1rem;
+  display: inline;
+  color: rgba(0,0,0,0.5);
+  font-size: 11px;
+  margin-left: 8px;
+}
+
+.book-card-bottom-section{
+      padding: 10px;
+    border-top: 1px solid grey;
+    width: 94%;
+    margin-left: 10px;
+}

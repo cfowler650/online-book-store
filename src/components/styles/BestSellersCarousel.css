@@ -26,3 +26,38 @@ button.slick-arrow.slick-prev {
 
   border-radius: .25rem;
 }
+
+.slide-button {
+    padding: 4px 0px;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: rgba(255, 1, 1, 0.3) 0px 10px 20px 1px;
+    width: 90%;
+    border: none;
+    font-weight: bold;
+}
+
+.slide-button:focus {
+  outline: none;
+}
+
+.slide-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.slide-author {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.slide-review {
+  margin-bottom: 1rem;
+  display: inline;
+  color: white;
+  font-size: 10px;
+  margin-left: 8px;
+}
