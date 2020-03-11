@@ -6,36 +6,48 @@ import CardColumns from "react-bootstrap/CardColumns";
 import Card from "react-bootstrap/Card";
 
 const books = [
-  'Book 1',
-  'Book 2',
-  'Book 3',
-  'Book 4',
-
+  'Act Like It',
+  'Alone on the Wall',
+  'The Painters Daughter',
+  'Dark Murder',
+  'Alex Furgonson',
+  'The Devils Playground'
 ]
 
 const BookCard = ({ title }) => {
   return (
-    <Card style={{ width: '22rem' }}>
-      <Card.Img variant="top" src="holder.js/100px160" />
-      <Card.Body>
-        <Card.Title>This is the title for {title}</Card.Title>
-        <Card.Text>
-          Nisi aute excepteur aliqua laborum. Elit voluptate dolore ut dolore. Enim ut nostrud non in proident consectetur eu voluptate commodo. Amet consectetur do voluptate do mollit quis.
-          </Card.Text>
+    <Card style={{ marginBottom: "4rem" }}>
+      <Card.Body style={{ display: "flex" }}>
+        <div>
+          <img style={{
+            position: "absolute",
+            top: "-20px",
+            left: "20px",
+            height: "145px"
+          }} src="https://source.unsplash.com/random/145x220" />
+        </div>
+
+        <div style={{ paddingLeft: '35%' }}>
+          <Card.Title style={{ fontSize: "16px", color: "rgba(0, 0, 0, 0.76)" }} >{title}</Card.Title>
+          <Card.Text style={{ fontSize: "12px" }}>
+            Nisi aute excepteur aliqua laborum. Elit voluptate dolore ut dolore. Enim ut nostrud non in proident consectetur eu voluptate commodo. Amet consectetur do voluptate do mollit quis.
+            </Card.Text>
+        </div>
       </Card.Body>
-    </Card>
+    </Card >
   )
 }
 
 const BookCardList = () => {
   return (
-    <Container>
-      <CardColumns style={{ columnGap: "23rem" }}>
+    <Container style={{ maxWidth: '1000px' }}>
+      <CardColumns style={{ columnCount: 2, gridColumnGap: '2.2rem' }}>
         {
           books.map(book => <BookCard title={book} />)
         }
       </CardColumns>
     </Container>
+
   )
 };
 
