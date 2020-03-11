@@ -7,20 +7,60 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 
-const SideBarListItem = ({ item }) => {
+const authorsData = [
+  {name: 'Sebastian Jeremy', image: './avatar1.jpg'},
+  {name: 'Johnathen Doe', image: './avatar2.jpg'},
+  {name: 'Angeline Summer', image: './avatar3.jpg'},
+  {name: 'Noah Jones', image: './avatar5.jpg'},
+  {name: 'Irene Cassandra', image: './avatar8.jpg'}
+]
+
+const booksData = [
+  {name: 'Big Magic: Creative Living Beyond Fear', image: './fourdays.jpg', author: 'John Cusask'},
+  {name: 'Big Magic: Creative Living Beyond Fear', image: './darkmurder.jpg',  author: 'John Cusask'},
+  {name: 'Big Magic: Creative Living Beyond Fear', image: './inconceivable.jpg',  author: 'John Cusask'},
+  {name: 'Big Magic: Creative Living Beyond Fear', image: './thedevilsplayground.jpg',  author: 'John Cusask'},
+  {name: 'Big Magic: Creative Living Beyond Fear', image: './thepaintersdaughter.jpg',  author: 'John Cusask'}
+]
+
+const SideBarListItemAuthor = ({item, image}) => {
   return (
     <Container className="noPadding" style={{ marginBottom: '0.8rem' }}>
-      <Image style={{ boxShadow: 'rgb(170, 170, 170) 0px 3px 6px 0.5px' }} src="https://source.unsplash.com/random/20x20" roundedCircle />
-      <span style={{ paddingLeft: "1rem", fontSize: "12px" }}>{item}</span>
+      <div className="container-test">
+        <Image className="side-bar-image" src={image} roundedCircle  />
+        <div style={{ paddingLeft: "1rem", fontSize: "12px", display: "inline" }}>{item}</div>
+      </div>
+    </Container>
+  )
+}
+
+const SideBarListItemBook = ({item, image, author}) => {
+  return (
+    <Container className="noPadding" style={{ marginBottom: '0.8rem' }}>
+      <div className="list-item-flexbox">
+        <Image style={{height: 80}}className="side-bar-image" src={image}   />
+        <div className="list-item-contents">
+          <div style={{fontSize: "12px", display: "inline" }}>{item}</div>
+          <p className="list-item-book-author">by {author}</p>
+        </div>
+      </div>
     </Container>
   )
 }
 
 const SideBarList = ({ title, data }) => {
-  const generateList = () =>
-    data.map(item => {
+  let generateList = ''
+  title === 'Author of the week'
+   ? generateList = () =>
+      data.map(item => {
+        return (
+          <SideBarListItemAuthor item={item.name} image={item.image} />
+        )
+      })
+  :  generateList = () =>
+     data.map(item => {
       return (
-        <SideBarListItem item={item} />
+        <SideBarListItemBook item={item.name} image={item.image} author={item.author} />
       )
     })
 
@@ -41,8 +81,8 @@ const SideBarList = ({ title, data }) => {
 const SideBar = () => {
   return (
     <Container>
-      <SideBarList title="Author of the week" data={['Sebastian Jeremy', 'Johnathen Doe', 'Angeline Summer']} />
-      <SideBarList title="Books of the year" data={['Big Magic Creative', 'Harry Potter', 'Goblet of Fire']} />
+      <SideBarList title="Author of the week" data={authorsData}  />
+      <SideBarList title="Books of the year" data={booksData}  />
     </Container>
   );
 };

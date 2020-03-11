@@ -7,3 +7,34 @@
   font-weight: 440;
   color: rgba(0, 0, 0, 0.76);
 }
+
+.list-title-book {
+    padding-bottom: 6px;
+     font-weight: 440;
+  color: rgba(0, 0, 0, 0.76);
+}
+
+.side-bar-image {
+  box-shadow: rgb(170, 170, 170) 0px 3px 6px 0.5px;
+  height: 20px;
+}
+
+.list-item-flexbox {
+    display: flex;
+    width: 200px;
+    padding-top: 4px;
+}
+
+.list-item-book-author {
+    font-size: 11px;
+    color: grey;
+    font-weight: 460;
+    margin-bottom: 0.4rem;
+    padding-top: 0.4rem;
+}
+
+.list-item-contents {
+  padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+}

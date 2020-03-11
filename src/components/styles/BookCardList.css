@@ -30,7 +30,8 @@
 
 .book-card-bottom-section{
       padding: 10px;
-    border-top: 1px solid grey;
+    border-top: 1.2px solid rgb(226, 226, 226);
     width: 94%;
     margin-left: 10px;
+
 }

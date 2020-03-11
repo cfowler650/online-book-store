@@ -24,12 +24,12 @@ function Arrow(props) {
 }
 
 let books = [
-  { title: 'Attack of The Planet', image: './book1.jpg', author: 'John Winkleman', rating: 5 },
-  { title: 'Book Title 2', image: './book1.jpg', author: 'John Winkleman', rating: 3 },
-  { title: 'Book Title 3', image: './book1.jpg', author: 'John Winkleman', rating: 2 },
-  { title: 'Book Title 4', image: './book1.jpg', author: 'John Winkleman', rating: 4 },
-  { title: 'Book Title 5', image: './book1.jpg', author: 'John Winkleman', rating: 5 },
-  { title: 'Book Title 6', image: './book1.jpg', author: 'John Winkleman', rating: 3 },
+  { title: 'Harry Potter Order Of The Phoenix', image: './harrypotter.jpg', author: 'J.K. Rowling', rating: 5 },
+  { title: 'Big Magic: Creative Living Beyond Fear', image: './bigmagic.jpg', author: 'Elizabeth Gilbert', rating: 3 },
+  { title: 'Thousand Skies About You', image: './thousandskiesaboveyou.jpg', author: 'Claudia Gray', rating: 2 },
+  { title: 'Book Title 4', image: './bigmagic.jpg', author: 'John Winkleman', rating: 4 },
+  { title: 'Book Title 5', image: './bigmagic.jpg', author: 'John Winkleman', rating: 5 },
+  { title: 'Book Title 6', image: './bigmagic.jpg', author: 'John Winkleman', rating: 3 },
 ]
 
 
@@ -88,7 +88,9 @@ const CarouselSlide = ({ thisIndex, title, image, author, rating }) => {
               fontSize: "12px", paddingLeft: 100,
               paddingRight: 20, paddingTop: "40px"
             }}>
-              <Card.Title style={{ fontSize: "16px", marginBottom: 0 }}><p className="slide-title">{title}</p></Card.Title>
+              <Card.Title style={{ fontSize: "16px", marginBottom: 0 }}>
+                <p className="slide-title">{title.length > 20 ? title.substr(0, 20) + '...' : title}</p>
+              </Card.Title>
               <p className="slide-author">by {author}</p>
               <span>
                 {starGenerator(rating)}

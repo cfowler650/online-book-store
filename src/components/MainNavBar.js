@@ -23,7 +23,7 @@ const MainNavBar = () => {
           </DropdownButton>
         </Col>
         <Col xs={6} style={{ textAlign: "center" }}>
-          read<p style={{ display: 'inline', fontWeight: "bold" }}>books</p>
+            read<p style={{ display: 'inline', fontWeight: "bold" }}>books</p>
         </Col>
 
         <Col style={{ textAlign: "right" }}>
