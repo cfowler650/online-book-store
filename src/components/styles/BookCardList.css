@@ -18,6 +18,16 @@
     box-shadow: rgba(0, 0, 0, 0.3) 0px 3px 12px 1px;
 }
 
+.likes-container {
+    font-size: 10px;
+}
+
+.likes-container p {
+    display: inline !important;
+}
+.likes-name {
+    font-weight: bold !important;
+}
 .book-card-reviews {
     margin-bottom: 1rem;
     display: inline;
@@ -26,9 +36,56 @@
     margin-left: 8px;
 }
 
+.card-list-avatar-image {
+    margin-right: 10px;
+    box-shadow: rgb(170, 170, 170) 0px 3px 6px 0.5px;
+}
+.card-list-main {
+    margin-bottom: 4rem;
+    height: 240px;
+}
+
 .book-card-bottom-section {
     padding: 10px;
     border-top: 1.2px solid rgb(226, 226, 226);
     width: 94%;
     margin-left: 10px;
+}
+
+.grid-container-fix {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 2.2rem;
+}
+@media only screen and (max-width: 600px) {
+    .grid-container-fix {
+        grid-template-columns: 1fr;
+    }
+}
+
+.book-info {
+    padding-left: 38%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .book-info {
+        padding-left: 42%;
+    }
+    .card-text {
+        font-size: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 990px) and (min-width: 600px) {
+    .book-info {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 990px) {
+    .book-card-image {
+        left: 22.5%;
+        height: 205px;
+    }
 }

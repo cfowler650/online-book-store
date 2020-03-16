@@ -5,3 +5,16 @@ a.nav-link:active {
 a.nav-link:focus {
     font-weight: bolder !important;
 }
+
+.nav-link-override {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    font-size: 14 !important;
+    font-weight: 300 !important;
+    color: rgba(0, 0, 0, 0.76) !important;
+}
+
+.genre-nav-bar-row {
+    margin-bottom: 20;
+    border-bottom: 1.2px solid #e2e2e2;
+}

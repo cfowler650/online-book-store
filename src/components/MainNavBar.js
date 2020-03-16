@@ -10,10 +10,9 @@ import Col from "react-bootstrap/Col";
 import DropdownButton from "react-bootstrap/DropdownButton";
 
 const MainNavBar = () => {
-    const element = <FontAwesomeIcon color="grey " icon={faBars} />;
-
+    const hamburgerIcon = <FontAwesomeIcon color="grey " icon={faBars} />;
     return (
-        <Container id="main-nav-bar" style={{ padding: 20 }}>
+        <Container id="main-nav-bar">
             <Row>
                 <Col>
                     <DropdownButton
@@ -24,15 +23,20 @@ const MainNavBar = () => {
                 </Col>
                 <Col xs={6} style={{ textAlign: "center" }}>
                     read
-                    <p style={{ display: "inline", fontWeight: "bold" }}>
-                        books
-                    </p>
+                    <p className="title-books">books</p>
                 </Col>
-
                 <Col style={{ textAlign: "right" }}>
-                    <span className="main-nav-hamburger">{element}</span>
+                    <span style={{ position: "absolute" }}>
+                        <img
+                            src="./avatar2.jpg"
+                            width="20px"
+                            className="online-avatar"
+                        />
+                        <span class="dot"></span>
+                    </span>
+                    <span className="main-nav-hamburger">{hamburgerIcon}</span>
                     <span className="main-nav-link">
-                        <p style={{ display: "inline" }}>Menu</p>
+                        <p>Menu</p>
                     </span>
                 </Col>
             </Row>

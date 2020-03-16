@@ -19,6 +19,17 @@
     height: 20px;
 }
 
+.side-bar-list-author {
+    padding-left: 1rem;
+    font-size: 12px;
+    display: inline;
+}
+
+.side-bar-list-book {
+    font-size: 12px;
+    display: inline;
+}
+
 .list-item-flexbox {
     display: flex;
     width: 200px;
